@@ -34,8 +34,9 @@ def model_fn(model_dir):
 
     # Load the saved word_dict.
     word_dict_path = os.path.join(model_dir, 'word_dict.pkl')
+	
     with open(word_dict_path, 'rb') as f:
-        model.word_dict = pickle.load(f)
+	model.word_dict = pickle.load(f)
 
     model.to(device).eval()
 
